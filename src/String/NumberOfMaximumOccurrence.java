@@ -1,6 +1,8 @@
 package String;
 
 public class NumberOfMaximumOccurrence {
+//    Time complexity : O(n)
+//    Space complexity : O(1)
     public static char NumberOfOccurrence(String str) {
         int[] frequencyArr = new int[26];
 
