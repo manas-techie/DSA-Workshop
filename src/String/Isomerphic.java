@@ -12,6 +12,7 @@ public class Isomerphic {
 
 
     }
+//    Leetcode 205
 
 //    Method 1
 //    Time Complexity O(n) and Space Complexity O(1)
