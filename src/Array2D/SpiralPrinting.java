@@ -13,6 +13,10 @@ public class SpiralPrinting {
             System.out.println();
         }
 
+//        Method - tracking bounderies
+
+//        Time Complexity is O(m*n) Because each element of the array is visited one time
+
 //        Spiral Print
         int minr = 0, maxr = m - 1;
         int minc = 0, maxc = n - 1;
@@ -24,11 +28,24 @@ public class SpiralPrinting {
             minr++;
 //            Top to bottom
             for (int i = minr; i <= maxr; i++) {
-                System.out.print(arr[i][maxc]);
+                System.out.print(arr[i][maxc] + " ");
             }
             maxc--;
 //            Right to Left
-            
+            if (minr <= maxr) {
+                for (int j = maxc; j >= minc; j--) {
+                    System.out.print(arr[maxr][j] + " ");
+                }
+                maxr--;
+            }
+
+            if (minc <= maxc) {
+//            Bottom to Top
+                for (int i = maxr; i >= minr; i--) {
+                    System.out.print(arr[i][minc] + " ");
+                }
+                minc++;
+            }
         }
     }
 }
