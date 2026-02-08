@@ -11,6 +11,9 @@ public class PascalTriangle {
         }
     }
 
+    //    Time Complexity O(n^2) Space complexity O(n^2) Auxiliary Space O(1)
+//    Leetcode 118 Easy
+
 //    public static List<List<Integer>> generate(int n) {
 //        List<List<Integer>> ans = new ArrayList<>();
 //        for (int i = 0; i < n; i++) {
@@ -44,3 +47,21 @@ public class PascalTriangle {
         return ans;
     }
 }
+
+//Pascal's Triangle
+
+//       j 0 1 2 3 4
+//    i 0 [1]
+//      1 [1,1]
+//      2 [1,2,1]
+//      3 [1,3,3,1]
+//      4 [1,4,6,4,1]
+
+//if j == 0 then l[0][j] = 1
+//and if j == i then l[i][j] = 1
+
+//l[2][1] = l[1][0] + l[1][1]  2 = 1 + 1
+//l[3][1] = l[2][0] + l[2][1]  3 = 1 + 2
+//l[3][2] = l[2][1] + l[2][2]  3 = 2 + 1
+
+//l[i][j] = l[i-1][j-1] + l[i-1][j]
