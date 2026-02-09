@@ -106,7 +106,7 @@ public class SetMatrixZeroes {
             }
         }
 
-        //traversing through the array using the 0th row as rowhelper and 0th col as colhelper
+        //traversing through the array using the 0th row as rowMarker and 0th col as colMarker
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 if (arr[i][j] == 0) {
@@ -134,14 +134,14 @@ public class SetMatrixZeroes {
             }
         }
 
-        // Handle first column based on marker
+        // Handle 0th column based on marker
         if (zeroColMarker == true) {
             for (int i = 0; i < m; i++) {
                 arr[i][0] = 0;
             }
         }
 
-        // Handle first row based on marker
+        // Handle 0th row based on marker
         if (zeroRowMarker == true) {
             for (int j = 0; j < n; j++) {
                 arr[0][j] = 0;

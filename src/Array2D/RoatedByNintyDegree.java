@@ -2,7 +2,7 @@ package Array2D;
 
 public class RoatedByNintyDegree {
 //    Leetcode 48
-//    Time Complexity O(M*N) Space Commplexity O(1)
+//    Time Complexity O(m*n) Space Complexity O(1)
     public static void rotate(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         transpose(matrix);
