@@ -34,7 +34,7 @@ public class basicsOfArrayList {
 
 
 //        for-each loop
-        for (Integer item : arr) {
+        for ( int item : arr) {
             System.out.print(item + " ");
         }
 

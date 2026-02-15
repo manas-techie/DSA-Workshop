@@ -23,12 +23,14 @@ public class BuySellStock {
         int profit = 0;
         int buy = prices[0];
         for (int i = 1; i < prices.length; i++) {
-            if (prices[i] < buy) {
+            int currentPrice = prices[i];
+            if (currentPrice < buy) {
                 buy = prices[i];
-            } else if (prices[i] - buy > profit) {
-                profit = prices[i] - buy;
+            } else if (currentPrice - buy > profit) {
+                profit = currentPrice - buy;
             }
         }
+
         return profit;
     }
 
