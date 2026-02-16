@@ -5,7 +5,7 @@ public class ScoreAfterFllipingMatrix {
 //    Time complexity = O(n^2) Space Complexity = O(1) Auxillary space = O(1)
     public static int matrixScore(int[][] arr) {
         int m=arr.length, n=arr[0].length;
-        //Make All element of first column to get the maximum score
+        //Make All element of first column 1 to get the maximum score
         for(int i=0;i<m;i++){
             if(arr[i][0]==0){
                 for(int j=0;j<n;j++){
@@ -20,7 +20,7 @@ public class ScoreAfterFllipingMatrix {
         }
 
 
-        //count no of Zeros and Ones in Each Columns except the First
+        //count no of Zeros and Ones in Each Column16.0 except the First
         for(int j=1;j<n;j++){
             int noOfOnes=0, noOfZeros=0;
             for(int i=0;i<m;i++){

@@ -26,6 +26,8 @@ public class lexicographicalMaximum {
                 maxWord = words[i];
             }
         }
+
+
         return maxWord;
     }
 }

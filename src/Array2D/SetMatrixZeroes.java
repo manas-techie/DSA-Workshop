@@ -29,12 +29,12 @@ public class SetMatrixZeroes {
 //        for (int i = 0; i < m; i++) {
 //            for (int j = 0; j < n; j++) {
 //                if(helperArr[i][j]==0){
-////                    set the ith row to zeroes
+// //                    set the ith row to zeroes
 //                    for(int b=0;b<n;b++){
 //                        arr[i][b]=0;
 //                    }
 
-    /// /                    set the jth column to zeroes
+    // //                    set the jth column to zeroes
 //                    for(int a=0;a<m;a++){
 //                        arr[a][j]=0;
 //                    }
