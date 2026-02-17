@@ -23,7 +23,7 @@ public class BubbleSort {
 //        }
 //        Bubble sort -2
 //        for (int i = 0; i < n; i++) {
-//            for (int j = 0; j < n-1-i; j++) {
+//            for (int j = 0; j < n-1-i; j++) { // Because in every pass the i+1 th largest element sorted to the right side
 //                if (arr[j] > arr[j + 1]) {
 //                    int temp = arr[j];
 //                    arr[j] = arr[j + 1];
