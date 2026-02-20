@@ -8,9 +8,10 @@ public class moveAllZeros {
             System.out.print(ele+" ");
         }
     }
+//    Leetcode 283
 //    method 1 => using Bubble sort
 //    Time Complexity O(n^2) Space Complexity O(1) Auxiliary Space O(1)
-//    Leetcode 283
+
 //    public static void moveZeroes(int[] arr) {
 //        int n = arr.length;
 //        int noz = 0;

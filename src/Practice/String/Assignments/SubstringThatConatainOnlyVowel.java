@@ -7,7 +7,7 @@ public class SubstringThatConatainOnlyVowel {
     public static void main(String[] args) {
 //        method - 1
 //        Brute Force
-//        Time Complexity O(n^2) Space Complexity O(n) Auxiliary Space O(1)
+//        Time Complexity O(n^3) Space Complexity O(n) Auxiliary Space O(1)
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the String : ");
         String str = sc.next();
@@ -15,7 +15,7 @@ public class SubstringThatConatainOnlyVowel {
 //        int n = str.length();
 //        for (int i = 0; i < n-1; i++) {
 //            for (int j = i; j < n; j++) {
-//                if(isVowel(str, i, j)){
+//                if(isVowel1(str, i, j)){
 //                    count++;
 //                }
 //            }
@@ -48,7 +48,7 @@ public class SubstringThatConatainOnlyVowel {
     }
 
 
-//    public static boolean isVowel(String str, int start, int end) {
+//    public static boolean isVowel1(String str, int start, int end) {
 //        for (int i = start; i <= end; i++) {
 //            char ch = str.charAt(i);
 //            if (!(ch == 'a' || ch == 'A' || ch == 'i' || ch == 'I' || ch == 'e' || ch == 'E' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U')) {

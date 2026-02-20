@@ -3,7 +3,9 @@ package Practice.String;
 public class Paliindrome {
     //    leetcode 125
     public static void main(String[] args) {
-
+        String str = " M an am";
+        boolean validPalindrome = isPalindrome(str);
+        System.out.println(validPalindrome);
     }
 
 //    method 1
@@ -27,7 +29,7 @@ public class Paliindrome {
 //    }
 
 
-//    Method 2
+    //    Method 2
 //    Time Complexity O(n) Space Complexity O(1) Auxiliary Space O(1)
     public static boolean isPalindrome(String str) {
         int i = 0, j = str.length() - 1;

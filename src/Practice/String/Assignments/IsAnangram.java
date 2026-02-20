@@ -45,6 +45,9 @@ public class IsAnangram {
             flag++;
         } else {
 
+            str1 = str1.toLowerCase();
+            str2 = str2.toLowerCase();
+
             int[] freqArr = new int[26];
 
             for (int i = 0; i < str1.length(); i++) {
