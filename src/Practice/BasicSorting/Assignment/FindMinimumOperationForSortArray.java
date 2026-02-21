@@ -33,7 +33,7 @@ public class FindMinimumOperationForSortArray {
         int finalBoundary = boundary;
         for (int i = n - 1; i >= boundary; i--) {
             if (zeroMarker[arr[i]]) {
-                finalBoundary = i + 1; //left side finalBoundary th index all elements are zero
+                finalBoundary = i + 1; //left side of finalBoundary th index all elements are zero
             }
         }
 

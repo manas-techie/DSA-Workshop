@@ -34,7 +34,7 @@ public class FindSmallestDivisor {
 
 
     //  method 2 => Optimized Approach
-//    Time Complexity O(nlog(m)) n = no of element is array , m = greatest element in array, Space Complexity O(1)
+//    Time Complexity O(nlog(m)), n = no of element is array , m = greatest element in array, Space Complexity O(1)
     public static boolean isLess(int[] arr, int mid, int t) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) { //O(n)
