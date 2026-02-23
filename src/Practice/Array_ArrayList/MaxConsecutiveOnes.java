@@ -5,6 +5,7 @@ public class MaxConsecutiveOnes {
         int[] arr = {1, 1, 0, 1};
         int count = findMaxConsecutiveOnes(arr);
         System.out.println(count);
+
     }
 
 //    Leetcode 485
