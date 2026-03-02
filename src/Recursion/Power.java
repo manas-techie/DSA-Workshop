@@ -22,7 +22,7 @@ public class Power {
 
     //    Leetcode 50
 //    solve using Binary Exponentiation
-    public static double myPow(double x, int n) {
+    public static double myPowBinary(double x, int n) {
         if (x == 0) return 0.0;
         if (n == 0) return 1.0;
         if (x == 1) return 1.0;
@@ -45,6 +45,29 @@ public class Power {
             binaryNum /= 2;
         }
         return pow;
+    }
+
+//    Time Complexity O(logn) Space Complexity O(logn) Auxiliary Space O(logn)
+    public static double myPow(double x, int n) {
+        // in constrain given that n can be less as -2^31 which will overflow, if we try to convert it into +ve
+        long N = n;
+
+        // if n is less than zero in that case
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
+        }
+
+        double pow = helper(x, N);
+        return pow;
+    }
+
+    public static double helper(double x, long n) {
+        if (n == 0) return 1.0;
+
+        double ans = helper(x, n / 2);
+        if (n % 2 == 0) return ans * ans;
+        return ans * ans * x;
     }
 
 

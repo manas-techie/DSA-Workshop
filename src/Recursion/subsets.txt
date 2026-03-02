@@ -1,0 +1,75 @@
+>>>Without removing the ans in backtracking and not using new list to add in arr
+
+Start: ans = []
+│
+├── SKIP 1: ans = []
+│   │
+│   ├── SKIP 2: ans = []
+│   │   │
+│   │   ├── SKIP 3: ans = []         -> BASE CASE: Add `ans` to `arr`
+│   │   │
+│   │   └── TAKE 3: ans = [3]        -> BASE CASE: Add `ans` to `arr`
+│   │                                *(arr now holds two references to [3])*
+│   │
+│   └── TAKE 2: ans = [3, 2]         -> BUG! The '3' was never removed.
+│       │
+│       ├── SKIP 3: ans = [3, 2]     -> BASE CASE: Add `ans` to `arr`
+│       │
+│       └── TAKE 3: ans = [3, 2, 3]  -> BASE CASE: Add `ans` to `arr`
+│
+└── TAKE 1: ans = [3, 2, 3, 1]       -> BUG! All previous junk is still here.
+    │
+    ├── SKIP 2: ans = [3, 2, 3, 1]
+    │   │
+    │   ├── SKIP 3: ans = [3, 2, 3, 1]     -> BASE CASE: Add `ans` to `arr`
+    │   │
+    │   └── TAKE 3: ans = [3, 2, 3, 1, 3]  -> BASE CASE: Add `ans` to `arr`
+    │
+    └── TAKE 2: ans = [3, 2, 3, 1, 3, 2]
+        │
+        ├── SKIP 3: ans = [3, 2, 3, 1, 3, 2]     -> BASE CASE: Add `ans` to `arr`
+        │
+        └── TAKE 3: ans = [3, 2, 3, 1, 3, 2, 3]  -> BASE CASE: Add `ans` to `arr`
+
+
+
+
+>>> using extra list to add in arr and remove last element using backtracking
+
+Start: ans = []
+│
+├── SKIP 1: ans = []
+│   │
+│   ├── SKIP 2: ans = []
+│   │   │
+│   │   ├── SKIP 3: ans = []         -> BASE CASE: Add COPY [] to `arr`
+│   │   │
+│   │   └── TAKE 3: ans = [3]        -> BASE CASE: Add COPY [3] to `arr`
+│   │               ans = []         -> BACKTRACK: Remove '3'
+│   │
+│   └── TAKE 2: ans = [2]            -> Clean state!
+│       │
+│       ├── SKIP 3: ans = [2]        -> BASE CASE: Add COPY [2] to `arr`
+│       │
+│       └── TAKE 3: ans = [2, 3]     -> BASE CASE: Add COPY [2, 3] to `arr`
+│                   ans = [2]        -> BACKTRACK: Remove '3'
+│                   ans = []         -> BACKTRACK: Remove '2'
+│                                       (Ready for the TAKE 1 branch!)
+│
+└── TAKE 1: ans = [1]                -> Clean state!
+    │
+    ├── SKIP 2: ans = [1]
+    │   │
+    │   ├── SKIP 3: ans = [1]        -> BASE CASE: Add COPY [1] to `arr`
+    │   │
+    │   └── TAKE 3: ans = [1, 3]     -> BASE CASE: Add COPY [1, 3] to `arr`
+    │               ans = [1]        -> BACKTRACK: Remove '3'
+    │
+    └── TAKE 2: ans = [1, 2]
+        │
+        ├── SKIP 3: ans = [1, 2]     -> BASE CASE: Add COPY [1, 2] to `arr`
+        │
+        └── TAKE 3: ans = [1, 2, 3]  -> BASE CASE: Add COPY [1, 2, 3] to `arr`
+                    ans = [1, 2]     -> BACKTRACK: Remove '3'
+                    ans = [1]        -> BACKTRACK: Remove '2'
+                    ans = []         -> BACKTRACK: Remove '1'

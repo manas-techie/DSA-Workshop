@@ -2,7 +2,7 @@ package Recursion;
 
 import java.util.ArrayList;
 
-public class SubSet {
+public class SubSetString {
     static ArrayList<String> arr = new ArrayList<>();
 
     public static void main(String[] args) {
