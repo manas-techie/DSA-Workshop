@@ -64,16 +64,16 @@ public class SeacrhInRoatedArray {
 //        while(low<=high){
 //            int mid = low + (high-low)/2;
 //            if(target==arr[mid]) return mid;
-//            else if(arr[mid]<=arr[high]){
-//                if(target<=arr[high] && target>arr[mid]){ //Mid to high everything is sorted
+//            else if(arr[mid]<=arr[high]){//Mid to high everything is sorted
+//                if(target<=arr[high] && target>arr[mid]){
 //                    low = mid+1; //Element is in the right side of the pivoted index
 //                }
 //                else{
 //                    high = mid - 1; //Element is in the left side of the pivoted index
 //                }
 //            }
-//            else{
-//                if(target>=arr[low] && target<arr[mid]){ //low to mmid Everything is sorted
+//            else{  //low to mid Everything is sorted
+//                if(target>=arr[low] && target<arr[mid]){
 //                    high = mid - 1; //Element is in the left side of the pivoted index
 //                }
 //                else{
