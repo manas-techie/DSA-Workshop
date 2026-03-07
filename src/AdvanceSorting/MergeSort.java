@@ -29,7 +29,7 @@ public class MergeSort {
         mergeSort(a);
         mergeSort(b);
 
-//        after thiis we will merge these a and b
+//        after this we will merge these a and b
         merge(a, b, arr);
 
 //        remove both arrays
