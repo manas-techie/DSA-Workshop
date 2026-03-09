@@ -7,7 +7,8 @@ public class FloorAndCellInSortedArray {
         int[] ans = getFloorAndCeil(arr, 1);
         System.out.print(ans[0] + " " + ans[1]);
     }
-//    Time Complexity  O(logn) Space Complexity O(1)
+
+    //    Time Complexity  O(logn) Space Complexity O(1)
     public static int[] getFloorAndCeil(int[] arr, int x) {
         int[] ans = {-1, -1};
         int low = 0, high = arr.length - 1;
