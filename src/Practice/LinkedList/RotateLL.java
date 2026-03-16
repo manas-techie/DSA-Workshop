@@ -1,6 +1,6 @@
 package Practice.LinkedList;
 
-public class RightMiddleOfLL {
+public class RotateLL {
     public static void printLL(ListNode head) {
         ListNode temp = head;
         while (temp != null) {
@@ -25,20 +25,51 @@ public class RightMiddleOfLL {
         d.next = e; // d -> e 10 -> 20 -> 30 -> 40 -> 50
         e.next = f; // d -> e 10 -> 20 -> 30 -> 40 -> 50 -> 60
 
-        ListNode middleNode = middleNode(a);
-        System.out.println(middleNode.val);
+        printLL(a);
+        ListNode head = rotateRight(a, 2);
+        printLL(head);
     }
 
-//    Single pass Solution
+    //    Leetcode 61
 //    Time Complexity O(n) Space Complexity O(1)
-    public static ListNode middleNode(ListNode head){
+    public static ListNode rotateRight(ListNode head, int k) {
+
+        if (head == null || head.next == null) return head;
+
+        int len = 0;
+        ListNode temp = head;
+
+        while (temp != null) {
+            temp = temp.next;
+            len++;
+        }
+
+        if (k != 0) k = k % len;
+        if (k == 0) return head;
+
         ListNode slow = head;
         ListNode fast = head;
 
-        while(fast.next != null && fast.next.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
+        for (int i = 1; i <= k; i++) {
+            fast = fast.next;
         }
-        return slow;
+
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+//        Store the next node of slow in temp
+        temp = slow.next;
+
+//        Divide the linked list
+        slow.next = null;
+
+//        Attacted the next of last nod to head
+        fast.next = head;
+//        change the head
+        head = temp;
+
+        return head;
     }
 }
