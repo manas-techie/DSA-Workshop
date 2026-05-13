@@ -1,5 +1,43 @@
 package Stack_DS;
 
+class ArrayStack {
+    private int capacity;
+    private int[] stackArray;
+    private int idx;
+    public ArrayStack() {
+        capacity = 1000;
+        stackArray = new int[capacity];
+        idx = -1;
+    }
+
+    public void push(int x) {
+        if(idx == capacity - 1){
+            System.out.println("Stack Overflow.");
+            return;
+        }
+        stackArray[++idx] = x;
+    }
+
+    public int pop() {
+        if(isEmpty()) {
+            System.out.println("Stack Underflow.");
+            return -1;
+        }
+        return stackArray[idx--];
+    }
+
+    public int top() {
+        if(isEmpty()) {
+            System.out.println("Stack is Empty.");
+            return -1;
+        }
+        return stackArray[idx];
+    }
+
+    public boolean isEmpty() {
+        return idx == -1;
+    }
+}
 
 class StackDS {
     private int[] arr = new int[5];
