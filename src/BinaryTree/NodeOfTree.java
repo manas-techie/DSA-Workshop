@@ -1,5 +1,6 @@
 package BinaryTree;
 
+
 class TreeNode {
     int val;
     TreeNode left = null;
@@ -36,7 +37,7 @@ public class NodeOfTree {
 
     }
 
-//    Traversing in a Binary Tree
+    //    Traversing in a Binary Tree
     private static void display(TreeNode root) {
         if (root == null) return; //Base case
         System.out.print(root.val + " ");

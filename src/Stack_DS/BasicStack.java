@@ -14,7 +14,7 @@ public class BasicStack {
             System.out.print(st.pop() + " ");
         }
 
-//        System.out.println(st);
+//        System.out.println(st); // A.S = O(n)
 //        System.out.println(st.peek());
 //        System.out.println(st.pop());
 //        System.out.println(st);

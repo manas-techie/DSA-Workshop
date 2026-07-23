@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Traversal {
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1); //a is root
@@ -29,6 +32,12 @@ public class Traversal {
         System.out.println();
         System.out.print("Postorder: ");
         postorder(a);
+        System.out.println();
+        System.out.print("BFS: ");
+        levelOrder(a);
+        System.out.println();
+        System.out.println("BFS using queue: ");
+        BFS(a);
     }
 
     private static void preorder(TreeNode root) {
@@ -50,5 +59,48 @@ public class Traversal {
         postorder(root.left); //Left Subtree
         postorder(root.right); //Right Subtree
         System.out.print(root.val + " ");
+    }
+
+    // BFS (left -> Right)
+    private static void levelOrder(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        if (root != null) q.add(root);
+        while (q.size() > 0) {
+            TreeNode front = q.remove();
+            System.out.print(front.val + " ");
+            if (front.left != null) q.add(front.left);
+            if (front.right != null) q.add(front.right);
+        }
+    }
+
+    //BFS using Queue -- differ the levels
+    public static void BFS(TreeNode root) {
+        int preLvl = 0;
+        Queue<Pair> q = new LinkedList<>();
+        Pair p = new Pair(root, 0);
+        q.add(p);
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            TreeNode node = front.node;
+            int lvl = front.level;
+            if (lvl != preLvl) {
+                System.out.println();
+                preLvl++;
+            }
+            System.out.print(node.val + " ");
+            if (node.left != null) q.add(new Pair(node.left, lvl + 1));
+            if (node.right != null) q.add(new Pair(node.right, lvl + 1));
+        }
+    }
+
+    //make a pair class
+    static class Pair {
+        TreeNode node;
+        int level;
+
+        Pair(TreeNode node, int lvl) {
+            this.node = node;
+            this.level = lvl;
+        }
     }
 }
