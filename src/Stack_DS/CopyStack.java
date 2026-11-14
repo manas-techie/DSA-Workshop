@@ -14,18 +14,35 @@ public class CopyStack {
 
         System.out.println("Original Stack: " + st_original);
 
-        Stack<Integer> st_reverse = new Stack<>();
+//        method 1
 
-        while(!st_original.isEmpty()){
-            st_reverse.push(st_original.pop());
+//        Stack<Integer> st_reverse = new Stack<>();
+//
+//        while(!st_original.isEmpty()){
+//            st_reverse.push(st_original.pop());
+//        }
+//
+//        Stack<Integer> st_final = new Stack<>();
+//
+//        while(!st_reverse.isEmpty()){
+//            st_final.push(st_reverse.pop());
+//        }
+//
+//        System.out.println("Final Stack: " + st_final);
+
+
+//        method 2
+        int[] temp = new int[st_original.size()];
+
+        for(int i=0; i<temp.length; i++){
+            temp[i] = st_original.pop();
         }
 
-        Stack<Integer> st_final = new Stack<>();
+        Stack<Integer> st_ans = new Stack<>();
 
-        while(!st_reverse.isEmpty()){
-            st_final.push(st_reverse.pop());
+        for(int i = temp.length-1; i>=0; i--){
+            st_ans.push(temp[i]);
         }
-
-        System.out.println("Final Stack: " + st_final);
+        System.out.println("Final Stack: " + st_ans);
     }
 }

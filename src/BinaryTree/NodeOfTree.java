@@ -1,16 +1,5 @@
 package BinaryTree;
 
-
-class TreeNode {
-    int val;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
-
 public class NodeOfTree {
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1); //a is root

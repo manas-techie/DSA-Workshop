@@ -1,8 +1,5 @@
 package BinaryTree;
 
-
-import com.sun.source.tree.Tree;
-
 public class BinaryTreeProperties {
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1); //a is root

@@ -16,7 +16,7 @@ public class ValidParentheses {
                 st.push('}');
             else if(c == '[')
                 st.push(']');
-            else if(st.isEmpty() || st.pop() != c)
+            else if(st.isEmpty() || st.pop() != c) //st.isEmpty() use because if the string start with closing bracket without this condition function will return true
                 return false;
         }
 

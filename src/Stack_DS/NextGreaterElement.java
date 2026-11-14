@@ -7,7 +7,7 @@ import java.util.Stack;
 public class NextGreaterElement {
     //    optimal approach
 //    Geeksforgeek
-//    TimE Complexity O(N) Space Complexity O(N)
+//    TimE Complexity O(N) Space Complexity and AUXILIARY SPACE O(N)
     public static ArrayList<Integer> nextLargerElement(int[] arr) {
         // code here
         int n = arr.length;
@@ -15,7 +15,7 @@ public class NextGreaterElement {
         for (int i = 0; i < n; i++) {
             ans.add(i, 0);
         }
-        ans.set(n - 1, -1);
+//        ans.set(n - 1, -1);
 
         Stack<Integer> st = new Stack<>();
 
